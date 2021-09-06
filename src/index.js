@@ -4,13 +4,11 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { ThemeProvider } from 'theme-ui'
 
-import theme from './theme'
+import { theme } from './theme'
 
 ReactDOM.render(
-	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<App />
-		</ThemeProvider>
-	</React.StrictMode>,
+	<ThemeProvider theme={theme}>
+		<App />
+	</ThemeProvider>,
 	document.getElementById('root')
 )
