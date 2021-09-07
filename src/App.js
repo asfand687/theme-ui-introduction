@@ -3,7 +3,11 @@ import Banner from './sections/Banner'
 
 function App() {
 	return (
-		<main>
+		<main
+			sx={{
+				variant: 'layout.main',
+			}}
+		>
 			<Header />
 			<Banner />
 		</main>

@@ -28,4 +28,8 @@ export const styles = {
 			},
 		},
 	},
+	link: {
+		width: '100%',
+		p: 2,
+	},
 }
