@@ -88,4 +88,54 @@ export const theme = {
 			},
 		},
 	},
+	text: {
+		heading: {
+			fontFamily: 'heading',
+			lineHeight: 'heading',
+			fontWeight: 'heading',
+			fontSize: [4],
+			letterSpacing: '-.55px',
+			color: 'heading',
+		},
+		heroPrimary: {
+			color: 'heading',
+			fontSize: ['32px', '42px', '52px', '58px', '66px'],
+			lineHeight: [1.3, null, null, null, 1.2],
+			fontWeight: 700,
+			mb: [4, null],
+		},
+		heroSecondary: {
+			fontSize: [2, null, '17px', '19px', 5],
+			lineHeight: [1.9, null, null, 2],
+			fontWeight: 'body',
+			mb: 5,
+			px: [0, 5],
+			color: 'heading',
+		},
+		title: {
+			// extends the text.heading styles
+			variant: 'text.heading',
+			fontWeight: 'bold',
+			fontSize: [3, null, 4],
+			lineHeight: 1.25,
+			mb: 1,
+		},
+		lead: {
+			fontSize: 40,
+			fontFamily: 'DM Sans',
+			fontWeight: '500',
+			lineHeight: '60px',
+			letterSpacing: '-1.5px',
+			color: '#0F2137',
+		},
+		muted: {
+			lineHeight: '26px',
+			color: 'muted',
+		},
+		secondary: {
+			fontWeight: 500,
+			color: '#00A99D',
+			lineHeight: '40px',
+		},
+	},
 }

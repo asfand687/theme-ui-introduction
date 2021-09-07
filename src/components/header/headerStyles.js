@@ -3,7 +3,7 @@ export const styles = {
 		color: 'text',
 		fontWeight: 'bold',
 		py: 4,
-		font: 'body',
+		fontFamily: 'body',
 	},
 	container: {
 		display: 'flex',
