@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Flex, Box } from 'theme-ui'
-import { IoMdClose, IoMdMenu } from 'react-icons/io'
+import { IoMdClose } from 'react-icons/io'
+import menuItems from './header/header.data'
 
 const Drawer = ({ showDrawer, toggleHandler }) => {
 	return (
@@ -8,10 +9,37 @@ const Drawer = ({ showDrawer, toggleHandler }) => {
 			sx={styles.sideDrawer}
 			className={`${showDrawer ? 'show-drawer' : 'hide'}`}
 		>
-			<Flex sx={{ flexDirection: 'row-reverse', p: 2 }}>
-				<Box onClick={toggleHandler} sx={{ cursor: 'pointer' }}>
-					<IoMdClose size='26px' />
+			<Flex
+				sx={{
+					flexDirection: 'column',
+					justifyContent: 'space-between',
+					width: '100%',
+					height: '90%',
+				}}
+			>
+				<Box>
+					<Flex
+						sx={{
+							display: 'flex',
+							flexDirection: 'row-reverse',
+							padding: '2rem',
+						}}
+					>
+						<Box onClick={toggleHandler} sx={{ cursor: 'pointer' }}>
+							<IoMdClose size='26px' />
+						</Box>
+					</Flex>
+					<Box sx={{ p: '3rem' }}>
+						<ul sx={styles.list}>
+							{menuItems.map((item) => (
+								<li>
+									<a href={`${item.path}`}>{item.label}</a>
+								</li>
+							))}
+						</ul>
+					</Box>
 				</Box>
+				<Box sx={{ display: 'flex', justifyContent: 'center' }}>Social</Box>
 			</Flex>
 		</nav>
 	)
@@ -28,6 +56,20 @@ const styles = {
 		width: '350px',
 		zIndex: '2000',
 		transition: 'all 0.4s ease-in-out',
+	},
+	list: {
+		listStyle: 'none',
+		p: '0px',
+		a: {
+			textDecoration: 'none',
+			color: '#333',
+			textTransform: 'uppercase',
+		},
+		li: {
+			borderBottom: '1px solid #333',
+			pb: 5,
+			mb: 4,
+		},
 	},
 }
 

@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { jsx } from 'theme-ui'
-import { Container, Box, Heading, Text, Image, Button } from 'theme-ui'
+import { Container, Box, Heading, Text, Button } from 'theme-ui'
 
 const styles = {
 	banner: {
