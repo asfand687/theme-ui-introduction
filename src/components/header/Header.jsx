@@ -3,14 +3,11 @@ import { Container, Flex, Button, Box, Heading } from 'theme-ui'
 import Img from '../../assets/logo.svg'
 import menuItems from './header.data'
 import { styles } from './headerStyles'
-import { IoMdClose, IoMdMenu } from 'react-icons/io'
-import Drawer from 'rc-drawer'
-import { useState } from 'react'
+import { IoMdMenu } from 'react-icons/io'
+import Drawer from '../Drawer'
 import Scrollbars from 'react-custom-scrollbars'
-import MobileDrawer from './MobileDrawer'
 
-const Header = () => {
-	const [showDrawer, setShowDrawer] = useState(false)
+const Header = ({ toggleHandler, showDrawer }) => {
 	return (
 		<header sx={styles.header}>
 			<Container sx={styles.container}>
@@ -26,10 +23,15 @@ const Header = () => {
 						</a>
 					))}
 				</Flex>
-				<Button className='donate__btn' variant='secondary'>
-					Get Started
-				</Button>
-				<MobileDrawer />
+				<Flex sx={styles.navRight}>
+					<Button className='donate__btn' variant='secondary'>
+						Get Started
+					</Button>
+					<Box sx={styles.icon} onClick={toggleHandler}>
+						<IoMdMenu size='26px' />
+					</Box>
+				</Flex>
+				<Drawer showDrawer={showDrawer} toggleHandler={toggleHandler} />
 			</Container>
 		</header>
 	)

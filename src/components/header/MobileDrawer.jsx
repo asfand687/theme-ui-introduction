@@ -1,49 +1,52 @@
 import { Box } from '@theme-ui/components'
 import Drawer from 'rc-drawer'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Scrollbars from 'react-custom-scrollbars'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 import { Link } from 'react-scroll'
 import menuItems from './header.data'
 
-export default function MobileDrawer() {
+export default function MobileDrawer({ toggleIcon }) {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 	const toggleHandler = () => {
+		setShowNav(false)
 		setIsDrawerOpen((prev) => !prev)
 	}
+	const [showNav, setShowNav] = useState(false)
+
 	return (
 		<>
-			<Drawer
-				width='320px'
-				className='drawer'
-				handler={false}
-				open={isDrawerOpen}
-				onClose={toggleHandler}
+			<section
+				style={{
+					width: '100%',
+					height: '100%',
+					position: 'absolute',
+					top: '0',
+					left: '0',
+					backgroundColor: 'rgba(0,0,0,0.3)',
+					zIndex: '2000',
+					transition: 'all 0.5s ease-in',
+				}}
 			>
-				<Box as='div' onClick={toggleHandler} sx={styles.close}>
-					<IoMdClose size='24px' color='#000000' />
-				</Box>
-				<Box sx={styles.drawer}>
-					<Scrollbars autoHide>
-						<Box sx={styles.content}>
-							<Box sx={styles.menu}>
-								{menuItems.map((menuItem, index) => (
-									<div>{menuItem.label}</div>
-								))}
-							</Box>
-						</Box>
-					</Scrollbars>
-				</Box>
-			</Drawer>
-			<Box
-				className='drawer__handler'
-				style={{ display: 'inline-block' }}
-				onClick={toggleHandler}
-			>
-				<Box sx={styles.handler}>
-					<IoMdMenu size='26px' />
-				</Box>
-			</Box>
+				<nav
+					style={{
+						position: 'fixed',
+						transform: isDrawerOpen ? 'translateX(0)' : 'translateX(-100%)',
+						width: '320px',
+						height: '100%',
+						background: '#f4f4f4',
+						zIndex: '2100',
+						transition: 'all 1s ease-in-out 0.5s',
+					}}
+				>
+					<div onClick={toggleHandler}>
+						<IoMdClose size='26px' />
+					</div>
+				</nav>
+			</section>
+			<div onClick={toggleHandler} sx={styles.handler}>
+				{toggleIcon}
+			</div>
 		</>
 	)
 }

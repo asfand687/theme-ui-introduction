@@ -1,52 +1,34 @@
-import { Box } from 'theme-ui'
-import RcDrawer from 'rc-drawer'
+/** @jsxImportSource theme-ui */
+import { Flex, Box } from 'theme-ui'
+import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
-export default function Drawer({
-	className,
-	children,
-	closeButton,
-	closeButtonStyle,
-	drawerHandler,
-	toggleHandler,
-	open,
-	width,
-	placement,
-	drawerStyle,
-	closeBtnStyle,
-	...props
-}) {
+const Drawer = ({ showDrawer, toggleHandler }) => {
 	return (
-		<>
-			<RcDrawer
-				open={open}
-				onClose={toggleHandler}
-				className={`drawer ${className || ''}`.trim()}
-				width={width}
-				placement={placement}
-				handler={false}
-				level={null}
-				duration={'0.4s'}
-				{...props}
-			>
-				{closeButton && (
-					<Box as='div' onClick={toggleHandler} sx={closeBtnStyle}>
-						{closeButton}
-					</Box>
-				)}
-				<Box sx={drawerStyle}>{children}</Box>
-			</RcDrawer>
-			<Box
-				className='drawer__handler'
-				style={{ display: 'inline-block' }}
-				onClick={toggleHandler}
-			>
-				{drawerHandler}
-			</Box>
-		</>
+		<nav
+			sx={styles.sideDrawer}
+			className={`${showDrawer ? 'show-drawer' : 'hide'}`}
+		>
+			<Flex sx={{ flexDirection: 'row-reverse', p: 2 }}>
+				<Box onClick={toggleHandler} sx={{ cursor: 'pointer' }}>
+					<IoMdClose size='26px' />
+				</Box>
+			</Flex>
+		</nav>
 	)
 }
 
-Drawer.defaultProps = {
-	width: '320px',
-	placement: 'left',
+const styles = {
+	sideDrawer: {
+		height: '100%',
+		background: '#fff',
+		boxShadow: '1px 0px 7px rgba(0, 0, 0, 0.5)',
+		position: 'fixed',
+		top: '0',
+		left: '0',
+		width: '350px',
+		zIndex: '2000',
+		transition: 'all 0.4s ease-in-out',
+	},
 }
+
+export default Drawer

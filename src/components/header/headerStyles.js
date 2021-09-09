@@ -12,7 +12,7 @@ export const styles = {
 		px: [4, null, 5],
 	},
 	nav: {
-		display: ['none', null, 'block'],
+		display: ['none', 'none', 'block'],
 		a: {
 			fontSize: 2,
 			fontWeight: 'body',
@@ -31,5 +31,13 @@ export const styles = {
 	link: {
 		width: '100%',
 		p: 2,
+	},
+	icon: {
+		display: ['block', 'block', 'none'],
+		mx: 3,
+		cursor: 'pointer',
+	},
+	navRight: {
+		alignItems: 'center',
 	},
 }
