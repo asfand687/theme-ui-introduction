@@ -4,7 +4,7 @@ import { Container, Box, Heading, Text, Button } from 'theme-ui'
 const styles = {
 	banner: {
 		fontFamily: "'DM Sans', sans-serif",
-		pt: ['100px', '110px'],
+		pt: ['140px', '145px', '155px', '180px', '215px'],
 		pb: [2, 0, 2, 0, 5],
 		position: 'relative',
 		zIndex: 2,

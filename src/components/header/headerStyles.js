@@ -1,9 +1,25 @@
 export const styles = {
 	header: {
 		color: 'text',
-		fontWeight: 'bold',
+		fontWeight: 'body',
 		py: 4,
 		fontFamily: 'body',
+		width: '100%',
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		backgroundColor: 'transparent',
+
+		'&.sticky': {
+			position: 'fixed',
+			backgroundColor: 'background',
+			color: '#000000',
+			boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
+			py: 3,
+			'nav > a': {
+				color: 'text',
+			},
+		},
 	},
 	container: {
 		display: 'flex',

@@ -6,15 +6,16 @@ import { styles } from './headerStyles'
 import { IoMdMenu } from 'react-icons/io'
 import Drawer from '../Drawer'
 
-const Header = ({ toggleHandler, showDrawer }) => {
+const Header = ({ toggleHandler, showDrawer, className }) => {
 	return (
-		<header sx={styles.header}>
+		<header className={`${className}`} sx={styles.header}>
 			<Container sx={styles.container}>
 				<img src={Img} alt='Logo' />
 				<Flex as='nav' sx={styles.nav}>
 					{menuItems.map((menuItem, index) => (
 						<a
 							href={`${menuItem.path}`}
+							activeClass='active'
 							key={index}
 							sx={{ textDecoration: 'none', color: 'text' }}
 						>
