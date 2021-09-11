@@ -5,6 +5,7 @@ import menuItems from './header.data'
 import { styles } from './headerStyles'
 import { IoMdMenu } from 'react-icons/io'
 import Drawer from '../Drawer'
+import { Link } from 'react-scroll'
 
 const Header = ({ toggleHandler, showDrawer, className }) => {
 	return (
@@ -13,14 +14,18 @@ const Header = ({ toggleHandler, showDrawer, className }) => {
 				<img src={Img} alt='Logo' />
 				<Flex as='nav' sx={styles.nav}>
 					{menuItems.map((menuItem, index) => (
-						<a
-							href={`${menuItem.path}`}
+						<Link
+							to={`${menuItem.path}`}
 							activeClass='active'
 							key={index}
-							sx={{ textDecoration: 'none', color: 'text' }}
+							spy={true}
+							smooth={true}
+							offset={-70}
+							duration={500}
+							sx={styles.navLinks}
 						>
 							{menuItem.label}
-						</a>
+						</Link>
 					))}
 				</Flex>
 				<Flex sx={styles.navRight}>

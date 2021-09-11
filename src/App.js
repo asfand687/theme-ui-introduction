@@ -31,6 +31,7 @@ function App() {
 				/>
 			</Sticky>
 			<Banner />
+			<section id='feature' style={{ height: '100vh' }}></section>
 		</main>
 	)
 }

@@ -9,6 +9,7 @@ export const styles = {
 		top: 0,
 		left: 0,
 		backgroundColor: 'transparent',
+		transition: 'all 0.3s ease-in',
 
 		'&.sticky': {
 			position: 'fixed',
@@ -18,6 +19,9 @@ export const styles = {
 			py: 3,
 			'nav > a': {
 				color: 'text',
+				'&.active': {
+					color: 'text_secondary',
+				},
 			},
 		},
 	},
@@ -55,5 +59,9 @@ export const styles = {
 	},
 	navRight: {
 		alignItems: 'center',
+	},
+	navLinks: {
+		textDecoration: 'none',
+		color: 'text',
 	},
 }
