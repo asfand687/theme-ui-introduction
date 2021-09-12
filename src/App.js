@@ -4,10 +4,11 @@ import Header from './components/header/Header'
 import Banner from './sections/Banner'
 import Sticky from 'react-stickynode'
 import './index.css'
+import Drawer from './components/Drawer'
 function App() {
 	const [showDrawer, setShowDrawer] = useState(false)
 	const styles = {
-		global: { minHeight: '100vh', width: '100%' },
+		global: { minHeight: '100vh', width: '100vw' },
 	}
 	const [isSticky, setIsSticky] = useState(false)
 	const handleStateChange = (status) => {
@@ -25,11 +26,15 @@ function App() {
 					showDrawer={showDrawer}
 					toggleHandler={() => setShowDrawer((prev) => !prev)}
 				/>
-				<Backdrop
-					showBackdrop={showDrawer}
-					toggleHandler={() => setShowDrawer((prev) => !prev)}
-				/>
 			</Sticky>
+			<Drawer
+				showDrawer={showDrawer}
+				toggleHandler={() => setShowDrawer((prev) => !prev)}
+			/>
+			<Backdrop
+				showBackdrop={showDrawer}
+				toggleHandler={() => setShowDrawer((prev) => !prev)}
+			/>
 			<Banner />
 			<section id='feature' style={{ height: '100vh' }}></section>
 		</main>

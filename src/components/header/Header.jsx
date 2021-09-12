@@ -4,7 +4,6 @@ import Img from '../../assets/logo.svg'
 import menuItems from './header.data'
 import { styles } from './headerStyles'
 import { IoMdMenu } from 'react-icons/io'
-import Drawer from '../Drawer'
 import { Link } from 'react-scroll'
 
 const Header = ({ toggleHandler, showDrawer, className }) => {
@@ -36,7 +35,6 @@ const Header = ({ toggleHandler, showDrawer, className }) => {
 						<IoMdMenu size='26px' />
 					</Box>
 				</Flex>
-				<Drawer showDrawer={showDrawer} toggleHandler={toggleHandler} />
 			</Container>
 		</header>
 	)

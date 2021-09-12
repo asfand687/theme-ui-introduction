@@ -56,6 +56,7 @@ const styles = {
 		width: '350px',
 		zIndex: '2000',
 		transition: 'all 0.4s ease-in-out',
+		fontFamily: 'body',
 	},
 	list: {
 		listStyle: 'none',

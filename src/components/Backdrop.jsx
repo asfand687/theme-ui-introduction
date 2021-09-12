@@ -13,7 +13,7 @@ const styles = {
 		left: '0',
 		width: '100%',
 		height: '100%',
-		zIndex: '4005',
+		zIndex: '1002',
 		background: 'rgba(0, 0, 0, 0.3)',
 	},
 }
