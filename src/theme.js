@@ -136,4 +136,61 @@ export const theme = {
 			lineHeight: '40px',
 		},
 	},
+	section: {
+		keyFeature: {
+			pt: [8, null, 9, null, null, 10],
+			pb: ['90px', null, 9, null, null, 10, null, '165px'],
+		},
+		feature: {
+			pb: [8, null, 9, null, null, 10, null, '170px'],
+		},
+		news: {
+			pb: [8, null, 9, null, null, 10, null, '170px'],
+		},
+		coreFeature: {
+			pb: [8, null, 9, null, null, 10, null, '170px'],
+			overflow: 'hidden',
+		},
+		testimonial: {
+			pt: [8, null, 8, '70px', null, 8, null, '145px'],
+			pb: ['90px', null, 9, null, null, 10, null, '190px'],
+			overflow: 'hidden',
+		},
+		services: {
+			pb: ['90px', null, 9, null, null, 10, null, '150px'],
+		},
+		pricing: {
+			pt: [8, null, 9, null, null, 10, null, '180px'],
+			pb: ['90px', null, 9, null, null, 10, null, '180px'],
+		},
+	},
+	sectionHeader: {
+		width: ['100%', null, '540px'],
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		mt: ['-3px', null, -1],
+		marginBottom: ['50px', null, '60px', null, null, '65px', null, '80px'],
+		mx: 'auto',
+		title: {
+			fontSize: ['24px', null, '28px', null, null, '32px', null, '36px'],
+			color: 'heading',
+			lineHeight: [1.3, null, null, 1.25],
+			textAlign: 'center',
+			fontWeight: '700',
+			letterSpacing: '-.5px',
+		},
+
+		subTitle: {
+			fontSize: [0, '13px', null, '14px'],
+			color: 'primary',
+			fontFamily: 'body',
+			textAlign: 'center',
+			letterSpacing: ['1.5px', null, '2px'],
+			textTransform: 'uppercase',
+			fontWeight: '700',
+			mb: 2,
+			lineHeight: 1.5,
+		},
+	},
 }

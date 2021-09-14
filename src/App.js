@@ -5,6 +5,7 @@ import Banner from './sections/Banner'
 import Sticky from 'react-stickynode'
 import './index.css'
 import Drawer from './components/Drawer'
+import KeyFeatures from './sections/KeyFeatures'
 function App() {
 	const [showDrawer, setShowDrawer] = useState(false)
 	const styles = {
@@ -36,7 +37,7 @@ function App() {
 				toggleHandler={() => setShowDrawer((prev) => !prev)}
 			/>
 			<Banner />
-			<section id='feature' style={{ height: '100vh' }}></section>
+			<KeyFeatures />
 		</main>
 	)
 }
