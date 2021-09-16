@@ -6,6 +6,8 @@ import Sticky from 'react-stickynode'
 import './index.css'
 import Drawer from './components/Drawer'
 import KeyFeatures from './sections/KeyFeatures'
+import ServiceSection from './sections/ServiceSection'
+import Feature from './sections/Feature'
 function App() {
 	const [showDrawer, setShowDrawer] = useState(false)
 	const styles = {
@@ -38,6 +40,8 @@ function App() {
 			/>
 			<Banner />
 			<KeyFeatures />
+			<ServiceSection />
+			<Feature />
 		</main>
 	)
 }

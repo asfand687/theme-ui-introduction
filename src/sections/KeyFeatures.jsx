@@ -1,3 +1,4 @@
+/** @jsxImportSource theme-ui */
 import { Container, Grid } from 'theme-ui'
 import SectionHeader from '../components/SectionHeader'
 import Performance from '../assets/key-feature/performance.svg'
@@ -54,7 +55,10 @@ const styles = {
 
 const KeyFeatures = () => {
 	return (
-		<section sx={{ variant: 'section.KeyFeature' }} id='feature'>
+		<section
+			sx={{ variant: 'section.KeyFeature', marginBottom: '3rem' }}
+			id='feature'
+		>
 			<Container>
 				<SectionHeader
 					slogan='Whats the function?'
