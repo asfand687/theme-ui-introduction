@@ -9,6 +9,7 @@ import KeyFeatures from './sections/KeyFeatures'
 import ServiceSection from './sections/ServiceSection'
 import Feature from './sections/Feature'
 import CoreFeatures from './sections/CoreFeatures'
+import Workflow from './sections/Workflow'
 function App() {
 	const [showDrawer, setShowDrawer] = useState(false)
 	const styles = {
@@ -44,6 +45,7 @@ function App() {
 			<ServiceSection />
 			<Feature />
 			<CoreFeatures />
+			<Workflow />
 		</main>
 	)
 }
